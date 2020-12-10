@@ -37,9 +37,13 @@ DEBUG = False
 ALLOWED_HOSTS = ["juustodiileri.kapno.cc", ".kapno.cc"]
 
 
+AUTH_USER_MODEL = 'user.User'
+
+
 # Application definition
 
 INSTALLED_APPS = [
+    'user',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +58,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -151,8 +155,8 @@ GS_CREDENTIALS = service_account.Credentials.from_service_account_info(
 THUMBNAIL_DEFAULT_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 THUMBNAIL_ALIASES = {
     '': {
-        'profile_small': {'size': (100, 100), 'crop': True},
-        'profile_medium': {'size': (400, 400), 'crop': True},
-        'profile_large': {'size': (900, 900), 'crop': True},
+        'avatar_small': {'size': (100, 100), 'crop': True},
+        'avatar_medium': {'size': (400, 400), 'crop': True},
+        'avatar_large': {'size': (900, 900), 'crop': True},
     },
 }

@@ -5,6 +5,7 @@ google-cloud-storage
 google-auth
 easy-thumbnails
 whitenoise
+Pillow
 
 psycopg2-binary
 gunicorn

@@ -4,6 +4,7 @@ django-storages
 google-cloud-storage
 google-auth
 easy-thumbnails
+whitenoise
 
 psycopg2-binary
 gunicorn

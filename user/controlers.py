@@ -71,3 +71,12 @@ def avatar(request):
     elif request.method == 'GET':
         avatar = request.user.avatar
         return HttpResponseRedirect(avatar.url)
+
+
+@login_required(login_url='/users/login/')
+def avatar_url(request):
+    if request.method == 'GET':
+        return JsonResponse({
+            'success': True,
+            'url': request.user.avatar.url
+        })

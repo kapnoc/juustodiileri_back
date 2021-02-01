@@ -11,9 +11,18 @@
             logger: m => console.log(m),
         });
         console.log(text);
+
+        const elm = document.getElementById('results');
+        elm.textContent = text;
     }
     const elm = document.getElementById('uploader');
     elm.addEventListener('change', recognize);
 </script>
+
+<h4>Results:</h4>
+<p>
+<div id="results">
+</div>
+</p>
 
 {% endblock %}

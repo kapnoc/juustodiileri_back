@@ -6,7 +6,7 @@
 <script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
 <script>
     const recognize = async ({ target: { files } }) => {
-        const { data: { text } } = await Tesseract.recognize(files[0], 'fra', {
+        const { data: { text } } = await Tesseract.recognize(files[0], 'eng+fra+fin', {
             // corePath: '../../node_modules/tesseract.js-core/tesseract-core.wasm.js',
             logger: m => console.log(m),
         });

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block 'contents' %}
+
+<input type="file" id="uploader" accept="image/*" capture>
+
+<script src='https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js'></script>
+<script>
+    const recognize = async ({ target: { files } }) => {
+        const { data: { text } } = await Tesseract.recognize(files[0], 'fra', {
+            // corePath: '../../node_modules/tesseract.js-core/tesseract-core.wasm.js',
+            logger: m => console.log(m),
+        });
+        console.log(text);
+    }
+    const elm = document.getElementById('uploader');
+    elm.addEventListener('change', recognize);
+</script>
+
+{% endblock %}

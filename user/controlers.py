@@ -36,14 +36,14 @@ def login_controler(request):
         })
 
 
-@login_required(login_url='/users/login/')
+@login_required(login_url='/user/login/')
 def test(request):
     return JsonResponse({
         'success': True,
     })
 
 
-@login_required(login_url='/users/login/')
+@login_required(login_url='/user/login/')
 def profile(request):
     return JsonResponse({
         'success': True,
@@ -55,7 +55,7 @@ class AvatarUploadForm(forms.Form):
     image = forms.ImageField()
 
 
-@login_required(login_url='/users/login/')
+@login_required(login_url='/user/login/')
 def avatar(request):
     if request.method == 'POST':
         form = AvatarUploadForm(request.POST, request.FILES)
@@ -73,7 +73,7 @@ def avatar(request):
         return HttpResponseRedirect(avatar.url)
 
 
-@login_required(login_url='/users/login/')
+@login_required(login_url='/user/login/')
 def avatar_url(request):
     if request.method == 'GET':
         return JsonResponse({

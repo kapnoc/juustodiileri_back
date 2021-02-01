@@ -44,6 +44,7 @@ AUTH_USER_MODEL = 'user.User'
 
 INSTALLED_APPS = [
     'user',
+    'books',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -68,7 +69,9 @@ ROOT_URLCONF = 'juustodiileri_back.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'juustodiileri_back/templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

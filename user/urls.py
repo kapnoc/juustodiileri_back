@@ -2,6 +2,7 @@ from django.urls import path
 
 from . import controlers
 
+app_name = "user"
 urlpatterns = [
     # path('', views.index, name='index'),
     path('register/', controlers.register, name='register'),
